@@ -21,7 +21,7 @@ grad = zeros(size(theta));
 
 theta_normal = [0; theta(2:end)];
 reg = lambda * (theta_normal' * theta_normal) ./ (2 * m);
-J_reg = J + reg;
+J = J + reg;
 
 grad = grad + lambda * theta_normal / m ;
 
