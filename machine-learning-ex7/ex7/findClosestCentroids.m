@@ -21,7 +21,13 @@ idx = zeros(size(X,1), 1);
 % Note: You can use a for-loop over the examples to compute this.
 %
 
-
+for i = 1 : size(X, 1)
+  x = repmat(X(i, :), K, 1);
+  diff = x - centroids;
+  dist = sum(diff .* diff, 2);
+  [minx, ind] = min(dist);
+  idx(i) = ind;
+endfor
 
 
 
